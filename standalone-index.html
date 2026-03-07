@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tareeqo — Knowledge is Your Rizq</title>
+  <meta name="description" content="Learn Quran, Science, Coding & Languages with verified teachers worldwide. Empowering the Ummah to learn, grow, and earn halal." />
+  <link rel="canonical" href="https://tareeqo.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Tareeqo",
+    "description": "Learn Quran, Science, Coding & Languages with verified teachers worldwide.",
+    "url": "https://tareeqo.com"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --background: hsl(0 0% 7%);
+      --foreground: hsl(0 0% 93%);
+      --muted-fg: hsl(0 0% 55%);
+      --border-c: hsl(0 0% 18%);
+      --white-04: rgba(255,255,255,0.04);
+      --white-06: rgba(255,255,255,0.06);
+      --white-08: rgba(255,255,255,0.08);
+      --white-10: rgba(255,255,255,0.10);
+      --white-12: rgba(255,255,255,0.12);
+      --white-15: rgba(255,255,255,0.15);
+      --white-02: rgba(255,255,255,0.02);
+      --white-03: rgba(255,255,255,0.03);
+      --white-01: rgba(255,255,255,0.01);
+    }
+
+    html { scroll-behavior: smooth; overflow-x: hidden; font-family: 'Inter', sans-serif; }
+    body { background: var(--background); color: var(--foreground); overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; }
+
+    a { color: inherit; text-decoration: none; }
+
+    .silver-text {
+      background: linear-gradient(180deg, hsl(0 0% 95%), hsl(0 0% 65%));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .silver-shimmer {
+      background: linear-gradient(90deg, hsl(0 0% 70%), hsl(0 0% 95%), hsl(0 0% 70%));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass-strong {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+    @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+    @media (min-width: 768px) { .container { padding: 0 2.5rem; } }
+    @media (min-width: 1024px) { .container { padding: 0 4rem; } }
+
+    /* NAV */
+    nav { position: fixed; top: 0; z-index: 50; width: 100%; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-size: 1.25rem; font-weight: 700; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+    @media (min-width: 768px) { .nav-logo { font-size: 1.5rem; } }
+    .nav-links { display: none; align-items: center; gap: 2.5rem; font-size: 0.875rem; color: var(--muted-fg); letter-spacing: 0.05em; }
+    @media (min-width: 768px) { .nav-links { display: flex; font-size: 1rem; } }
+    .nav-links a:hover { color: var(--foreground); }
+
+    /* HERO */
+    .hero { position: relative; height: 55vh; min-height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 2.5rem; }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay1 { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+    .hero-overlay2 { position: absolute; inset: 0; background: linear-gradient(to top, var(--background), rgba(18,18,18,0.3), transparent); }
+    .hero-overlay3 { position: absolute; inset: 0; background: linear-gradient(to right, rgba(18,18,18,0.4), transparent); }
+    .hero-content { position: relative; z-index: 10; max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-weight: 500; margin-bottom: 2rem; }
+    .hero-tag-line { display: inline-block; height: 1px; width: 2rem; background: rgba(255,255,255,0.2); }
+    .hero h1 { font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 700; line-height: 1.02; margin-bottom: 2rem; letter-spacing: -0.02em; }
+    .hero p { font-size: 1.125rem; color: rgba(255,255,255,0.5); max-width: 42rem; margin: 0 auto 2.5rem; line-height: 1.7; font-weight: 300; }
+    @media (min-width: 768px) { .hero p { font-size: 1.25rem; } }
+    .hero-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+    .hero-pill { padding: 0.375rem 1rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.08); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); font-weight: 500; }
+
+    /* SECTIONS */
+    section { padding: 4rem 0; }
+    @media (min-width: 768px) { section { padding: 5rem 0; } }
+    .section-tag { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.24); font-weight: 500; display: block; margin-bottom: 1.5rem; }
+    .section-title { font-size: clamp(1.875rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 2rem; }
+
+    /* STATS */
+    .stats { position: relative; padding: 2.5rem 0; }
+    .stats-border { position: absolute; inset: 0; border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; }
+    @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
+    .stat-value { font-size: 1.875rem; font-weight: 700; font-family: 'Space Grotesk', sans-serif; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+    @media (min-width: 768px) { .stat-value { font-size: 2.25rem; } }
+    .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+
+    /* CARDS GRID */
+    .cards-grid-2 { display: grid; gap: 1.5rem; }
+    @media (min-width: 768px) { .cards-grid-2 { grid-template-columns: repeat(2, 1fr); } }
+    .cards-grid-3 { display: grid; gap: 1px; background: rgba(255,255,255,0.03); border-radius: 1rem; overflow: hidden; }
+    @media (min-width: 768px) { .cards-grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .cards-grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+    .card {
+      position: relative; padding: 2.5rem; border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.01);
+      transition: all 0.5s ease;
+    }
+    .card:hover { background: rgba(255,255,255,0.025); border-color: rgba(255,255,255,0.08); }
+    @media (min-width: 768px) { .card { padding: 3rem; } }
+    .card-tag { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.16); font-weight: 500; margin-bottom: 1.5rem; display: block; }
+    .card-icon { width: 3.5rem; height: 3.5rem; border-radius: 0.75rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; transition: all 0.5s; }
+    .card:hover .card-icon { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); }
+    .card-icon svg { width: 24px; height: 24px; color: rgba(255,255,255,0.4); transition: color 0.5s; }
+    .card:hover .card-icon svg { color: rgba(255,255,255,0.7); }
+    .card h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    .card p { font-size: 0.875rem; color: var(--muted-fg); line-height: 1.7; }
+    .card-top-line { position: absolute; top: 0; left: 2rem; right: 2rem; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.04), transparent); transition: all 0.5s; }
+    .card:hover .card-top-line { background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent); }
+
+    /* Feature card (no border-radius, bg background) */
+    .feature-card { background: var(--background); padding: 2.5rem; border: none; border-radius: 0; position: relative; transition: all 0.5s; }
+    .feature-card:hover { background: rgba(255,255,255,0.02); }
+    @media (min-width: 768px) { .feature-card { padding: 3rem; } }
+
+    /* Corner decoration */
+    .corner-h, .corner-v { position: absolute; top: 0; left: 0; background: rgba(255,255,255,0.06); transition: all 0.5s; }
+    .corner-h { width: 2rem; height: 1px; }
+    .corner-v { width: 1px; height: 2rem; }
+    .card:hover .corner-h, .feature-card:hover .corner-h { width: 4rem; background: rgba(255,255,255,0.12); }
+    .card:hover .corner-v, .feature-card:hover .corner-v { height: 4rem; background: rgba(255,255,255,0.12); }
+
+    /* SCHOLAR CARD */
+    .scholar-card { padding: 2rem; }
+    @media (min-width: 768px) { .scholar-card { padding: 2.5rem; } }
+    .scholar-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .scholar-avatar { width: 3rem; height: 3rem; border-radius: 50%; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; transition: all 0.5s; }
+    .card:hover .scholar-avatar { background: rgba(255,255,255,0.06); }
+    .scholar-avatar svg { width: 20px; height: 20px; color: rgba(255,255,255,0.3); transition: color 0.5s; }
+    .card:hover .scholar-avatar svg { color: rgba(255,255,255,0.6); }
+    .scholar-name { font-size: 1.125rem; font-weight: 600; letter-spacing: -0.02em; }
+    .scholar-field { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.16); }
+    .scholar-quote { font-size: 0.875rem; color: var(--muted-fg); line-height: 1.7; font-weight: 300; font-style: italic; }
+
+    /* PROCESS */
+    .process-grid { display: grid; gap: 4rem; }
+    @media (min-width: 768px) { .process-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; } }
+    .process-step { text-align: center; position: relative; }
+    .process-num { font-size: 6rem; font-weight: 700; font-family: 'Space Grotesk', sans-serif; color: rgba(255,255,255,0.02); line-height: 1; margin-bottom: 1rem; user-select: none; }
+    @media (min-width: 768px) { .process-num { font-size: 7rem; } }
+    .process-icon { width: 3rem; height: 3rem; border-radius: 0.75rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+    .process-icon svg { width: 20px; height: 20px; color: rgba(255,255,255,0.4); }
+    .process-step h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: -0.02em; margin-top: -0.5rem; }
+    .process-step p { font-size: 0.875rem; color: var(--muted-fg); line-height: 1.7; max-width: 20rem; margin: 0 auto; }
+    .process-chevron { display: none; position: absolute; top: 4rem; right: -1rem; color: rgba(255,255,255,0.06); }
+    @media (min-width: 768px) { .process-chevron { display: block; } }
+
+    /* WISDOM */
+    .wisdom-card { padding: 2rem; }
+    @media (min-width: 768px) { .wisdom-card { padding: 2.5rem; } }
+    .wisdom-quote-mark { font-size: 1.875rem; color: rgba(255,255,255,0.06); font-family: 'Space Grotesk', sans-serif; margin-bottom: 1.5rem; user-select: none; }
+    .wisdom-text { font-size: 15px; color: rgba(255,255,255,0.56); line-height: 1.7; margin-bottom: 1.5rem; font-weight: 300; font-style: italic; }
+    .wisdom-source { font-size: 0.875rem; font-weight: 500; color: rgba(255,255,255,0.64); margin-bottom: 1rem; }
+    .wisdom-divider { width: 2rem; height: 1px; background: rgba(255,255,255,0.06); margin-bottom: 1rem; }
+    .wisdom-context { font-size: 12px; color: rgba(255,255,255,0.16); line-height: 1.6; }
+
+    /* PROMISE */
+    .promise-item { display: flex; align-items: center; gap: 1.25rem; padding: 1.25rem 1.5rem; border-radius: 0.75rem; border: 1px solid rgba(255,255,255,0.03); transition: all 0.5s; }
+    .promise-item:hover { border-color: rgba(255,255,255,0.08); background: rgba(255,255,255,0.015); }
+    .promise-check { width: 1.25rem; height: 1.25rem; border-radius: 50%; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color 0.5s; }
+    .promise-item:hover .promise-check { border-color: rgba(255,255,255,0.15); }
+    .promise-check svg { width: 10px; height: 10px; color: rgba(255,255,255,0.3); transition: color 0.5s; }
+    .promise-item:hover .promise-check svg { color: rgba(255,255,255,0.6); }
+    .promise-text { font-size: 15px; color: rgba(255,255,255,0.48); font-weight: 300; transition: color 0.5s; }
+    .promise-item:hover .promise-text { color: rgba(255,255,255,0.64); }
+    .promise-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    /* CTA */
+    .cta { position: relative; padding: 4rem 0; overflow: hidden; }
+    @media (min-width: 768px) { .cta { padding: 6rem 0; } }
+    .cta-bg { position: absolute; inset: 0; }
+    .cta-bg-grad { position: absolute; inset: 0; background: linear-gradient(to bottom, var(--background), rgba(0,0,0,0.9), var(--background)); }
+    .cta-bg-glow { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(255,255,255,0.02), transparent); }
+    .cta-content { position: relative; text-align: center; }
+    .cta h2 { font-size: clamp(2.25rem, 5vw, 4.5rem); font-weight: 700; margin-bottom: 2rem; letter-spacing: -0.02em; line-height: 1.05; }
+    .cta p { font-size: 1.125rem; color: rgba(255,255,255,0.28); margin-bottom: 3.5rem; max-width: 32rem; margin-left: auto; margin-right: auto; font-weight: 300; line-height: 1.7; }
+    .cta-divider { width: 3rem; height: 1px; background: rgba(255,255,255,0.06); margin: 0 auto 1.5rem; }
+    .cta-email { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.16); transition: color 0.3s; }
+    .cta-email:hover { color: rgba(255,255,255,0.28); }
+    .cta-email svg { width: 14px; height: 14px; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(255,255,255,0.03); padding: 2.5rem 0; }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+    .footer-logo { font-size: 1.5rem; font-weight: 700; font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.02em; }
+    @media (min-width: 768px) { .footer-logo { font-size: 1.875rem; } }
+    .footer-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; font-size: 0.875rem; color: rgba(255,255,255,0.16); letter-spacing: 0.05em; }
+    @media (min-width: 768px) { .footer-links { gap: 2.5rem; font-size: 1rem; } }
+    .footer-links a:hover { color: rgba(255,255,255,0.28); }
+    .footer-divider { width: 3rem; height: 1px; background: rgba(255,255,255,0.04); }
+    .footer-copy { font-size: 0.875rem; color: rgba(255,255,255,0.12); letter-spacing: 0.05em; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes scaleIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: scale(1); } }
+
+    .anim-fade-up { opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .anim-fade-in { opacity: 0; animation: fadeIn 1.2s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .anim-scale { opacity: 0; animation: scaleIn 0.7s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+    .d0 { animation-delay: 0s; } .d1 { animation-delay: 0.1s; } .d2 { animation-delay: 0.15s; }
+    .d3 { animation-delay: 0.2s; } .d4 { animation-delay: 0.25s; } .d5 { animation-delay: 0.3s; }
+    .d6 { animation-delay: 0.35s; } .d7 { animation-delay: 0.4s; } .d8 { animation-delay: 0.45s; }
+    .d9 { animation-delay: 0.5s; } .d10 { animation-delay: 0.55s; } .d11 { animation-delay: 0.6s; }
+    .d12 { animation-delay: 0.7s; } .d13 { animation-delay: 0.8s; } .d14 { animation-delay: 0.9s; }
+    .d15 { animation-delay: 1.0s; } .d16 { animation-delay: 1.05s; }
+
+    /* Intersection Observer animation */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+    .reveal-fade { opacity: 0; transition: opacity 1.2s cubic-bezier(0.16,1,0.3,1); }
+    .reveal-fade.visible { opacity: 1; }
+
+    ::selection { background: rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="glass-strong">
+      <div class="container nav-inner">
+        <span class="nav-logo silver-text">Tareeqo</span>
+        <div class="nav-links">
+          <a href="#vision">Vision</a>
+          <a href="#disciplines">Disciplines</a>
+          <a href="#wisdom">Wisdom</a>
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1585036156171-384164a8c675?w=1920&q=80" alt="Islamic learning" loading="eager" />
+      <div class="hero-overlay1"></div>
+      <div class="hero-overlay2"></div>
+      <div class="hero-overlay3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="anim-fade-in d9">
+        <span class="hero-tag"><span class="hero-tag-line"></span>Coming Soon<span class="hero-tag-line"></span></span>
+      </div>
+      <h1 class="anim-fade-up d12"><span class="silver-text">Knowledge is</span><br><span class="silver-shimmer">Your Rizq</span></h1>
+      <p class="anim-fade-up d14">Quran · Science · Coding · Languages — following the legacy of Islamic scholars who lit the world with knowledge. Empowering the Ummah to learn, grow, and earn halal.</p>
+      <div class="hero-pills anim-fade-up d16">
+        <span class="hero-pill">Quran</span>
+        <span class="hero-pill">Science</span>
+        <span class="hero-pill">Coding</span>
+        <span class="hero-pill">Languages</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section id="vision" style="padding: 2rem 0 2.5rem;">
+    <div class="container" style="text-align:center;">
+      <span class="section-tag reveal-fade">Our Vision</span>
+      <h2 class="section-title silver-text reveal">The Muslim world once led<br> humanity in knowledge.<br> It's time to reclaim that legacy.</h2>
+      <div class="reveal" style="width:4rem;height:1px;background:rgba(255,255,255,0.1);margin:0 auto 2rem;"></div>
+      <p class="reveal" style="color:var(--muted-fg);font-size:1.125rem;line-height:1.7;max-width:42rem;margin:0 auto;">Tareeqo is more than a learning platform. It's a movement to empower Muslim brothers and sisters with Quran, science, coding, and language skills — so they can earn halal rizq and contribute to the world with dignity and excellence.</p>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stats-border"></div>
+    <div class="container" style="position:relative;">
+      <div class="stats-grid" style="text-align:center;" id="stats-grid"></div>
+    </div>
+  </section>
+
+  <!-- DISCIPLINES -->
+  <section id="disciplines" style="padding:3rem 0 4rem;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem;">
+        <span class="section-tag reveal-fade">What You'll Master</span>
+        <h2 class="section-title silver-text reveal">Four Pillars of Excellence</h2>
+      </div>
+      <div class="cards-grid-2" id="disciplines-grid"></div>
+    </div>
+  </section>
+
+  <!-- ISLAMIC SCHOLARS LEGACY -->
+  <section id="legacy" style="padding:4rem 0;position:relative;">
+    <div style="position:absolute;inset:0;background:rgba(255,255,255,0.005);"></div>
+    <div class="container" style="position:relative;">
+      <div style="text-align:center;margin-bottom:3.5rem;">
+        <span class="section-tag reveal-fade">Standing on Giants</span>
+        <h2 class="section-title silver-text reveal">The Legacy That Inspires Us</h2>
+        <p class="reveal" style="color:var(--muted-fg);font-size:1rem;line-height:1.7;max-width:42rem;margin:1.5rem auto 0;">These scholars didn't separate faith from knowledge. They excelled in both — and changed the world. Tareeqo carries their torch.</p>
+      </div>
+      <div class="cards-grid-2" id="scholars-grid"></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" style="padding:4rem 0;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem;">
+        <span class="section-tag reveal-fade">Crafted with Purpose</span>
+        <h2 class="section-title silver-text reveal">Every Detail, Perfected</h2>
+      </div>
+      <div class="cards-grid-3" id="features-grid"></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section style="padding:4rem 0;position:relative;">
+    <div style="position:absolute;inset:0;background:rgba(255,255,255,0.005);"></div>
+    <div class="container" style="position:relative;">
+      <div style="text-align:center;margin-bottom:3.5rem;">
+        <span class="section-tag reveal-fade">The Experience</span>
+        <h2 class="section-title silver-text reveal">Effortlessly Simple</h2>
+      </div>
+      <div class="process-grid" id="process-grid"></div>
+    </div>
+  </section>
+
+  <!-- WISDOM -->
+  <section id="wisdom" style="padding:4rem 0;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:3.5rem;">
+        <span class="section-tag reveal-fade">Why We Learn</span>
+        <h2 class="section-title silver-text reveal">Words That Guide Us</h2>
+      </div>
+      <div class="cards-grid-2" style="grid-template-columns:repeat(1,1fr);" id="wisdom-grid"></div>
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <section style="padding:4rem 0;position:relative;">
+    <div style="position:absolute;inset:0;background:rgba(255,255,255,0.005);"></div>
+    <div class="container" style="position:relative;">
+      <div style="text-align:center;margin-bottom:4rem;">
+        <span class="section-tag reveal-fade">Our Promise</span>
+        <h2 class="section-title silver-text reveal" style="font-size:clamp(1.875rem,4vw,2.5rem);">Uncompromising Standards</h2>
+      </div>
+      <div class="promise-list" id="promise-list"></div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact" class="cta">
+    <div class="cta-bg">
+      <div class="cta-bg-grad"></div>
+      <div class="cta-bg-glow"></div>
+    </div>
+    <div class="container cta-content">
+      <span class="section-tag reveal-fade" style="margin-bottom:2rem;">Begin</span>
+      <h2 class="silver-text reveal">Your Rizq<br>Starts With Knowledge</h2>
+      <p class="reveal">Be among the first to experience Tareeqo. Learn Quran, master coding, explore science, and build a path to halal income.</p>
+      <div class="reveal">
+        <div class="cta-divider"></div>
+        <a href="mailto:tareeqo@swiftreload.com?subject=Tareeqo%20%E2%80%94%20I'm%20Interested!&body=Assalamu%20Alaikum%2C%0A%0AI'm%20interested%20in%20learning%20more%20about%20Tareeqo.%0A%0AName%3A%20%0AI'm%20looking%20for%3A%20%0A%0AJazakAllah%20Khair" class="cta-email">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          tareeqo@swiftreload.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-logo silver-text">Tareeqo</span>
+      <div class="footer-links">
+        <a href="#vision">Vision</a>
+        <a href="#disciplines">Disciplines</a>
+        <a href="#wisdom">Wisdom</a>
+        <a href="#features">Features</a>
+        <a href="mailto:tareeqo@swiftreload.com">Contact</a>
+      </div>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">© 2026 Tareeqo. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- SVG Icons (inline templates) -->
+  <script>
+    // Simple SVG icons
+    const icons = {
+      BookOpen: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+      Microscope: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>',
+      Code: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+      Languages: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>',
+      Shield: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>',
+      Video: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>',
+      Globe: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+      Users: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+      Sparkles: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>',
+      Heart: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>',
+      GraduationCap: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>',
+      Star: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+      Check: '<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>',
+      ChevronRight: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>',
+    };
+
+    // DATA
+    const stats = [
+      { value: "4", label: "Disciplines" },
+      { value: "500+", label: "Teachers" },
+      { value: "25+", label: "Languages" },
+      { value: "50+", label: "Countries" },
+    ];
+
+    const disciplines = [
+      { icon: "BookOpen", title: "Quran & Islamic Studies", description: "Tajweed, memorization, Tafsir, Hadith, and Aqidah taught through authentic traditions rooted in Ibn al-Jazari, Al-Shatibi, Al-Tabari, and the Sunni schools of Al-Ash'ari and Al-Maturidi.", tag: "Foundation" },
+      { icon: "Microscope", title: "Science & Mathematics", description: "Follow in the footsteps of Ibn Sina and Al-Biruni. Physics, biology, chemistry, and advanced mathematics.", tag: "Discovery" },
+      { icon: "Code", title: "Coding & Technology", description: "Inspired by Al-Khwarizmi, the father of algorithms. Web development, data science, AI, and software engineering.", tag: "Innovation" },
+      { icon: "Languages", title: "Languages", description: "Arabic, English, Turkish, Urdu, French, Malay, and more. Following Al-Biruni who mastered Arabic, Sanskrit, Greek, Hebrew & Syriac, and Al-Kindi who bridged Greek, Persian & Indian knowledge into Arabic.", tag: "Communication" },
+    ];
+
+    const features = [
+      { icon: "Shield", title: "Verified Experts", description: "Every teacher personally vetted. Scholars with authentic certifications, engineers from top companies.", tag: "Trust" },
+      { icon: "Video", title: "Cinematic Lessons", description: "HD video with interactive whiteboard, live coding environments, and real-time collaboration tools.", tag: "Technology" },
+      { icon: "Globe", title: "Global Network", description: "500+ teachers across 50 countries. 25+ languages. One united Ummah learning together.", tag: "Reach" },
+      { icon: "Users", title: "Flexible Learning", description: "Private 1-on-1 or group sessions. Your schedule, your pace. Learn while you earn.", tag: "Freedom" },
+      { icon: "Sparkles", title: "AI-Powered Progress", description: "Intelligent tracking across all subjects — from Tajweed accuracy to coding proficiency.", tag: "Intelligence" },
+      { icon: "Heart", title: "Halal Career Paths", description: "Not just education — a path to halal rizq. Skills that lead to dignified, ethical careers.", tag: "Purpose" },
+    ];
+
+    const scholars = [
+      { name: "Al-Khwarizmi", field: "Father of Algebra & Algorithms", contribution: "His name gave us the word 'algorithm' — the foundation of all modern computing." },
+      { name: "Ibn Sina", field: "Medicine & Philosophy", contribution: "The Canon of Medicine was the standard medical text in Europe for 500 years." },
+      { name: "Al-Biruni", field: "Astronomy & Mathematics", contribution: "Calculated Earth's radius with 99.7% accuracy — a millennium before satellites." },
+      { name: "Al-Farabi", field: "Logic & Political Science", contribution: "Known as 'The Second Teacher' after Aristotle, he shaped the philosophy of science." },
+    ];
+
+    const wisdoms = [
+      { text: "Read! In the name of your Lord who created.", source: "Quran 96:1", context: "The very first revelation — a command to seek knowledge." },
+      { text: "Whoever takes a path in search of knowledge, Allah will make easy for him the path to Paradise.", source: "Sahih Muslim", context: "The Prophet ﷺ on the virtue of learning." },
+      { text: "The ink of the scholar is more sacred than the blood of the martyr.", source: "Prophetic Tradition", context: "Knowledge is among the highest acts of devotion." },
+    ];
+
+    const steps = [
+      { num: "01", title: "Choose Your Path", desc: "Quran, science, coding, or languages — pick your discipline and browse verified experts who match your goals.", icon: "Users" },
+      { num: "02", title: "Connect & Learn", desc: "Book your free consultation. Start HD lessons with interactive tools, coding sandboxes, and live collaboration.", icon: "BookOpen" },
+      { num: "03", title: "Grow & Earn", desc: "Build real skills that lead to halal careers. From Quran teacher to software engineer — your journey, your rizq.", icon: "Star" },
+    ];
+
+    const promises = [
+      "Authentic Ijazah verification for Quran teachers",
+      "Industry-experienced coding and science instructors",
+      "AI-powered progress tracking across all disciplines",
+      "Career guidance towards halal employment opportunities",
+      "Free consultation with any teacher before commitment",
+      "Multilingual support team across 10+ languages",
+    ];
+
+    // RENDER
+    // Stats
+    document.getElementById('stats-grid').innerHTML = stats.map((s, i) =>
+      `<div class="reveal-scale" style="transition-delay:${i*0.1}s;"><div class="stat-value silver-text">${s.value}</div><div class="stat-label">${s.label}</div></div>`
+    ).join('');
+
+    // Disciplines
+    document.getElementById('disciplines-grid').innerHTML = disciplines.map((d, i) =>
+      `<div class="card reveal-scale" style="transition-delay:${i*0.08}s;">
+        <div class="card-top-line"></div>
+        <span class="card-tag">${d.tag}</span>
+        <div class="card-icon">${icons[d.icon]}</div>
+        <h3>${d.title}</h3>
+        <p>${d.description}</p>
+      </div>`
+    ).join('');
+
+    // Scholars
+    document.getElementById('scholars-grid').innerHTML = scholars.map((s, i) =>
+      `<div class="card scholar-card reveal" style="transition-delay:${i*0.1}s;">
+        <div class="corner-h"></div><div class="corner-v"></div>
+        <div class="scholar-header">
+          <div class="scholar-avatar">${icons.GraduationCap}</div>
+          <div><div class="scholar-name">${s.name}</div><span class="scholar-field">${s.field}</span></div>
+        </div>
+        <p class="scholar-quote">"${s.contribution}"</p>
+      </div>`
+    ).join('');
+
+    // Features
+    document.getElementById('features-grid').innerHTML = features.map((f, i) =>
+      `<div class="feature-card reveal-scale" style="transition-delay:${i*0.08}s;">
+        <div class="corner-h"></div><div class="corner-v"></div>
+        <span class="card-tag">${f.tag}</span>
+        <div class="card-icon">${icons[f.icon]}</div>
+        <h3 style="font-size:1.25rem;">${f.title}</h3>
+        <p>${f.description}</p>
+      </div>`
+    ).join('');
+
+    // Process
+    document.getElementById('process-grid').innerHTML = steps.map((s, i) =>
+      `<div class="process-step reveal" style="transition-delay:${i*0.15}s;">
+        <div class="process-num">${s.num}</div>
+        <div class="process-icon">${icons[s.icon]}</div>
+        <h3>${s.title}</h3>
+        <p>${s.desc}</p>
+        ${i < 2 ? `<div class="process-chevron">${icons.ChevronRight}</div>` : ''}
+      </div>`
+    ).join('');
+
+    // Wisdom
+    const wisdomGrid = document.getElementById('wisdom-grid');
+    wisdomGrid.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(3,1fr)' : '1fr';
+    wisdomGrid.innerHTML = wisdoms.map((w, i) =>
+      `<div class="card wisdom-card reveal-scale" style="transition-delay:${i*0.1}s;">
+        <div class="card-top-line"></div>
+        <div class="wisdom-quote-mark">"</div>
+        <p class="wisdom-text">"${w.text}"</p>
+        <div class="wisdom-source">${w.source}</div>
+        <div class="wisdom-divider"></div>
+        <p class="wisdom-context">${w.context}</p>
+      </div>`
+    ).join('');
+    window.addEventListener('resize', () => {
+      wisdomGrid.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(3,1fr)' : '1fr';
+    });
+
+    // Promise
+    document.getElementById('promise-list').innerHTML = promises.map((p, i) =>
+      `<div class="promise-item reveal" style="transition-delay:${i*0.06}s;">
+        <div class="promise-check">${icons.Check}</div>
+        <span class="promise-text">${p}</span>
+      </div>`
+    ).join('');
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.reveal, .reveal-scale, .reveal-fade').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
